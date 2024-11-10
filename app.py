@@ -29,7 +29,7 @@ def click():
     charadeslist.remove(Prompt)
 
     # counter for remaining prompts
-    remaining.config(text = length)
+    remaining.config(text = length-1)
 
 
 # text
