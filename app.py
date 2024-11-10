@@ -19,7 +19,7 @@ window.geometry("1000x300")
 window.title("Charades Prompt Generator")
 
 # random prompt generator
-def click():
+def generateprompt():
     length = len(charadeslist)
     if length == 0: 
         Prompt = "Oops! Looks like we have run out of prompts :("
@@ -31,6 +31,9 @@ def click():
     # counter for remaining prompts
     remaining.config(text = length-1)
 
+def hideprompt():
+    label.config(text = "Click the button to generate a prompt!")
+
 
 # text
 label = tk.Label(window, text = "Click the button to generate a prompt!", font=("Arial", 40))
@@ -38,18 +41,24 @@ space = tk.Label(window, text = "", font=("Arial", 15))
 remainingtext = tk.Label(window, text = "Number of Remaining Prompts:")
 remaining = tk.Label(window, text = original_length)
 
-# creating the button
-button = tk.Button(window,
+# creating buttons
+Generate = tk.Button(window,
                    text="Generate Prompt",
                    font=("Arial", 15),
-                   command=click)
+                   command=generateprompt)
+
+HidePrompt = tk.Button(window,
+                    text="Hide Prompt",
+                    font=("Arial", 7),
+                    command=hideprompt)
 
 # pack
-button.pack()
+Generate.pack()
 label.pack()
 space.pack()
 remainingtext.pack()
 remaining.pack()
+HidePrompt.pack()
 
 
 window.mainloop()
