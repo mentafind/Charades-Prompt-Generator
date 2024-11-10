@@ -1,13 +1,16 @@
 import random
 import tkinter as tk
 
-# retrieving Charades list from txt file
+# retreiving list from txt file
 file = open("prompts.txt", "r")
 data = file.read()
 
 charadeslist = data.split("\n")
 
 file.close()
+
+# setting up the counter for remaining prompts
+original_length = len(charadeslist)
 
 
 # setting up the window
@@ -25,7 +28,15 @@ def click():
     label.config(text = Prompt)
     charadeslist.remove(Prompt)
 
-label = tk.Label(window, text="Click the button to generate a prompt!", font=("Arial", 40))
+    # counter for remaining prompts
+    remaining.config(text = length)
+
+
+# text
+label = tk.Label(window, text = "Click the button to generate a prompt!", font=("Arial", 40))
+space = tk.Label(window, text = "", font=("Arial", 15))
+remainingtext = tk.Label(window, text = "Number of Remaining Prompts:")
+remaining = tk.Label(window, text = original_length)
 
 # creating the button
 button = tk.Button(window,
@@ -36,6 +47,9 @@ button = tk.Button(window,
 # pack
 button.pack()
 label.pack()
+space.pack()
+remainingtext.pack()
+remaining.pack()
 
 
 window.mainloop()
