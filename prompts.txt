@@ -29,9 +29,9 @@ Subway
 College/University
 Lullaby
 Hand Soap
-Right (direction)
-Left (direction)
-Forward (direction)
+Right
+Left
+Forward
 Garden Hose
 Fire Fighting
 Juggling
@@ -57,7 +57,7 @@ Vacuuming
 Chopping Wood
 Flight Attendent
 Lightbulb
-Drive Through
+Drive Thru
 Influencer
 Mowing the Lawn/Cutting the Grass
 Plumber

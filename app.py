@@ -1,7 +1,7 @@
 import random
 import tkinter as tk
 
-# creating charadeslist
+# retrieving Charades list from txt file
 file = open("prompts.txt", "r")
 data = file.read()
 
@@ -25,12 +25,12 @@ def click():
     label.config(text = Prompt)
     charadeslist.remove(Prompt)
 
-label = tk.Label(window, text="Click the button to generate a prompt!", font=(60))
+label = tk.Label(window, text="Click the button to generate a prompt!", font=("Arial", 40))
 
 # creating the button
 button = tk.Button(window,
                    text="Generate Prompt",
-                   font=(40),
+                   font=("Arial", 15),
                    command=click)
 
 # pack
